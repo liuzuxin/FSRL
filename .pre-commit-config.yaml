@@ -1,0 +1,30 @@
+---
+repos:
+  - repo: https://github.com/google/yapf
+    rev: v0.32.0
+    hooks:
+      - id: yapf
+        name: yapf
+        args: ["--style=setup.cfg", "-r", "-i"]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort
+        args: ["--settings-path=setup.cfg"]
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 4.0.1
+    hooks:
+      - id: flake8
+        args: ["--config=setup.cfg", "--count", "--show-source", "--statistics"]
+        additional_dependencies: ["flake8_bugbear"]
+        exclude: ^examples/
+
+  - repo: https://github.com/pycqa/pydocstyle
+    rev: 6.1.1
+    hooks:
+      - id: pydocstyle
+        args: ["--config=setup.cfg"]
+        exclude: ^(tests/)|(docs/)|(examples/)|(fsrl/utils/)|(fsrl/config/)|(setup.py)
