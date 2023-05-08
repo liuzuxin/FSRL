@@ -116,8 +116,6 @@ class Mujoco5MCfg(MujocoBaseCfg):
 @dataclass
 class Mujoco20MCfg(MujocoBaseCfg):
     epoch: int = 1000
-    unbounded: bool = False
-    gamma: float = 0.98
     sample_act_num: int = 64
 
 

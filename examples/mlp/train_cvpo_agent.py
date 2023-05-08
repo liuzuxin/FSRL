@@ -56,7 +56,7 @@ TASK_TO_CFG = {
     "SafetyHalfCheetahVelocityGymnasium-v1": Mujoco5MCfg,
     "SafetyHopperVelocityGymnasium-v1": Mujoco5MCfg,
     "SafetySwimmerVelocityGymnasium-v1": Mujoco5MCfg,
-    "SafetyWalker2dVelocityGymnasium-v1": Mujoco10MCfg,
+    "SafetyWalker2dVelocityGymnasium-v1": MujocoBaseCfg,
     "SafetyAntVelocityGymnasium-v1": Mujoco10MCfg,
     "SafetyHumanoidVelocityGymnasium-v1": Mujoco20MCfg,
 }
