@@ -47,5 +47,67 @@ You can use the drop-down menu to check the reward and cost curves.
 Safety-Gymnasium-Velocity-Tasks
 -------------------------------
 
-To be updated...
+.. raw:: html
 
+   <label for="select-env">Select the environment:</label>
+   <select id="select-env">
+     <option value="SafetyHalfCheetahVelocityGymnasium-v1">SafetyHalfCheetahVelocityGymnasium-v1</option>
+     <option value="SafetyHopperVelocityGymnasium-v1">SafetyHopperVelocityGymnasium-v1</option>
+     <option value="SafetySwimmerVelocityGymnasium-v1">SafetySwimmerVelocityGymnasium-v1</option>
+     <option value="SafetyWalker2dVelocityGymnasium-v1">SafetyWalker2dVelocityGymnasium-v1</option>
+     <option value="SafetyAntVelocityGymnasium-v1">SafetyAntVelocityGymnasium-v1</option>
+     <!-- Add more options as needed -->
+   </select>
+
+   <style>
+     #image-container {
+       display: flex;
+       justify-content: space-between;
+     }
+     #reward-image, #cost-image {
+       max-width: 49%;
+       height: auto;
+     }
+   </style>
+
+   <div id="image-container">
+     <img id="reward-image" src="../_static/images/safety-gymnasium-velocity/SafetyHalfCheetahVelocityGymnasium-v1-reward.png" alt="Reward image">
+     <img id="cost-image" src="../_static/images/safety-gymnasium-velocity/SafetyHalfCheetahVelocityGymnasium-v1-cost.png" alt="Cost image">
+   </div>
+
+   <script src="../_static/js/benchmark.js"></script>
+
+
+Safety-Gymnasium-Navigation-Tasks
+---------------------------------
+
+.. raw:: html
+
+   <label for="select-env">Select the environment:</label>
+   <select id="select-env">
+     <option value="SafetyPointButton1Gymnasium-v0">SafetyPointButton1Gymnasium-v0</option>
+     <option value="SafetyPointButton2Gymnasium-v0">SafetyPointButton2Gymnasium-v0</option>
+     <option value="SafetyPointGoal1Gymnasium-v0">SafetyPointGoal1Gymnasium-v0</option>
+     <option value="SafetyPointGoal2Gymnasium-v0">SafetyPointGoal2Gymnasium-v0</option>
+     <option value="SafetyPointPush1Gymnasium-v0">SafetyPointPush1Gymnasium-v0</option>
+     <option value="SafetyPointPush2Gymnasium-v0">SafetyPointPush2Gymnasium-v0</option>     
+     <!-- Add more options as needed -->
+   </select>
+
+   <style>
+     #image-container {
+       display: flex;
+       justify-content: space-between;
+     }
+     #reward-image, #cost-image {
+       max-width: 49%;
+       height: auto;
+     }
+   </style>
+
+   <div id="image-container">
+     <img id="reward-image" src="../_static/images/safety-gymnasium-navigation/SafetyPointButton1Gymnasium-v0-reward.png" alt="Reward image">
+     <img id="cost-image" src="../_static/images/safety-gymnasium-navigation/SafetyPointButton1Gymnasium-v0-cost.png" alt="Cost image">
+   </div>
+
+   <script src="../_static/js/benchmark.js"></script>

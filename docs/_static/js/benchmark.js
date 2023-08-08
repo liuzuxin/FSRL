@@ -5,10 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     selectEnv.addEventListener("change", function () {
         var env = selectEnv.value;
-        var newRewardSrc = "../_static/images/bullet/" + env + "-reward.png";
-        var newCostSrc = "../_static/images/bullet/" + env + "-cost.png";
-        // console.log("New reward src:", newRewardSrc);
-        // console.log("New cost src:", newCostSrc);
+        var newRewardSrc = "";
+
+        if (env.includes("Velocity")) {
+            newRewardSrc = "../_static/images/safety-gymnasium-velocity/" + env + "-reward.png";
+        } else if (env.includes("Gymnasium")) {
+            newRewardSrc = "../_static/images/safety-gymnasium-navigation/" + env + "-reward.png";
+        } else {
+            newRewardSrc = "../_static/images/bullet/" + env + "-reward.png";
+        }
+
+        var newCostSrc = newRewardSrc.replace("-reward.png", "-cost.png");
+
         rewardImage.src = newRewardSrc;
         costImage.src = newCostSrc;
     });
