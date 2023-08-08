@@ -1,23 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var selectEnv = document.getElementById("select-env");
-    var rewardImage = document.getElementById("reward-image");
-    var costImage = document.getElementById("cost-image");
+    var bulletSelectEnv = document.getElementById("select-bullet-env");
+    var bulletRewardImage = document.getElementById("bullet-reward-image");
+    var bulletCostImage = document.getElementById("bullet-cost-image");
 
-    selectEnv.addEventListener("change", function () {
-        var env = selectEnv.value;
-        var newRewardSrc = "";
+    var velocitySelectEnv = document.getElementById("select-velocity-env");
+    var velocityRewardImage = document.getElementById("velocity-reward-image");
+    var velocityCostImage = document.getElementById("velocity-cost-image");
 
-        if (env.includes("Velocity")) {
-            newRewardSrc = "../_static/images/safety-gymnasium-velocity/" + env + "-reward.png";
-        } else if (env.includes("Gymnasium")) {
-            newRewardSrc = "../_static/images/safety-gymnasium-navigation/" + env + "-reward.png";
-        } else {
-            newRewardSrc = "../_static/images/bullet/" + env + "-reward.png";
-        }
+    var navigationSelectEnv = document.getElementById("select-navigation-env");
+    var navigationRewardImage = document.getElementById("navigation-reward-image");
+    var navigationCostImage = document.getElementById("navigation-cost-image");
 
-        var newCostSrc = newRewardSrc.replace("-reward.png", "-cost.png");
+    bulletSelectEnv.addEventListener("change", function () {
+        var env = bulletSelectEnv.value;
+        var newRewardSrc = "../_static/images/bullet/" + env + "-reward.png";
+        var newCostSrc = "../_static/images/bullet/" + env + "-cost.png";
+        bulletRewardImage.src = newRewardSrc;
+        bulletCostImage.src = newCostSrc;
+    });
 
-        rewardImage.src = newRewardSrc;
-        costImage.src = newCostSrc;
+    velocitySelectEnv.addEventListener("change", function () {
+        var env = velocitySelectEnv.value;
+        var newRewardSrc = "../_static/images/safety-gymnasium-velocity/" + env + "-reward.png";
+        var newCostSrc = "../_static/images/safety-gymnasium-velocity/" + env + "-cost.png";
+        velocityRewardImage.src = newRewardSrc;
+        velocityCostImage.src = newCostSrc;
+    });
+
+    navigationSelectEnv.addEventListener("change", function () {
+        var env = navigationSelectEnv.value;
+        var newRewardSrc = "../_static/images/safety-gymnasium-navigation/" + env + "-reward.png";
+        var newCostSrc = "../_static/images/safety-gymnasium-navigation/" + env + "-cost.png";
+        navigationRewardImage.src = newRewardSrc;
+        navigationCostImage.src = newCostSrc;
     });
 });
