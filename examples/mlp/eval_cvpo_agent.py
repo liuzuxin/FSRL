@@ -47,11 +47,13 @@ def eval(args: EvalConfig):
     )
 
     if args.parallel_eval:
+        assert args.render is False, "please use single env when rendering"
         test_envs = ShmemVectorEnv(
             [lambda: gym.make(task) for _ in range(args.eval_episodes)]
         )
     else:
-        test_envs = gym.make(task)
+        render_mode = "human" if args.render else None
+        test_envs = gym.make(task, render_mode=render_mode)
 
     rews, lens, cost = agent.evaluate(
         test_envs=test_envs,

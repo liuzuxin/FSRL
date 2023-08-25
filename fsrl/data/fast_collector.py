@@ -328,8 +328,6 @@ class FastCollector(object):
 
             if render:
                 self.env.render()
-                if "render_fps" not in self.env.metadata:
-                    time.sleep(0.1)
 
             # add data into the buffer
             ptr, ep_rew, ep_len, ep_idx = self.buffer.add(
