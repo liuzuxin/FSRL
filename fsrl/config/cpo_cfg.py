@@ -10,7 +10,6 @@ class TrainCfg:
     device: str = "cpu"
     thread: int = 4  # if use "cpu" to train
     seed: int = 10
-    use_default_cfg: bool = False
     # algorithm params
     lr: float = 1e-3
     hidden_sizes: Tuple[int, ...] = (128, 128)

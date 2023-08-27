@@ -10,7 +10,6 @@ class TrainCfg:
     device: str = "cpu"
     thread: int = 4  # if use "cpu" to train
     seed: int = 10
-    use_default_cfg: bool = False
     # CVPO arguments
     estep_iter_num: int = 1
     estep_kl: float = 0.02
