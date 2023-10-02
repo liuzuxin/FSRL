@@ -106,6 +106,12 @@ class DDPGLagAgent(OffpolicyAgent):
         net = Net(state_shape, hidden_sizes=hidden_sizes, device=device)
         actor = Actor(net, action_shape, max_action=max_action, device=device).to(device)
         actor_optim = torch.optim.Adam(actor.parameters(), lr=actor_lr)
+
+        if np.isscalar(cost_limit):
+            cost_dim = 1
+        else:
+            cost_dim = len(cost_limit)
+            
         nets = [
             Net(
                 state_shape,
@@ -113,7 +119,7 @@ class DDPGLagAgent(OffpolicyAgent):
                 hidden_sizes=hidden_sizes,
                 concat=True,
                 device=device
-            ) for i in range(2)
+            ) for i in range(cost_dim + 1)
         ]
         critic = [Critic(n, device=device).to(device) for n in nets]
         critic_optim = torch.optim.Adam(nn.ModuleList(critic).parameters(), lr=critic_lr)
