@@ -119,6 +119,8 @@ class PPOLagAgent(OnpolicyAgent):
         self.logger = logger
         self.cost_limit = cost_limit
 
+        
+
         # set seed and computing
         seed_all(seed)
         torch.set_num_threads(thread)
