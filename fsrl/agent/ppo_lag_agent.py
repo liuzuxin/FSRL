@@ -119,7 +119,10 @@ class PPOLagAgent(OnpolicyAgent):
         self.logger = logger
         self.cost_limit = cost_limit
 
-        
+        if np.isscalar(cost_limit):
+            cost_dim = 1
+        else:
+            cost_dim = len(cost_limit)
 
         # set seed and computing
         seed_all(seed)
@@ -138,7 +141,7 @@ class PPOLagAgent(OnpolicyAgent):
             Critic(
                 Net(state_shape, hidden_sizes=hidden_sizes, device=device),
                 device=device
-            ).to(device) for _ in range(2)
+            ).to(device) for _ in range(1 + cost_dim)
         ]
 
         torch.nn.init.constant_(actor.sigma_param, -0.5)
