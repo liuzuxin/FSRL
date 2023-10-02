@@ -104,7 +104,7 @@ class CPOAgent(OnpolicyAgent):
         if np.isscalar(cost_limit):
             cost_dim = 1
         else:
-            raise RuntimeError("CPO does not support multi-cost")
+            raise RuntimeError("CPO does not support multiple costs. Please refer to Page 5 of http://proceedings.mlr.press/v70/achiam17a/achiam17a.pdf for related discussions.")
 
         # set seed and computing
         seed_all(seed)
