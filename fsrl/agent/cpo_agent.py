@@ -101,6 +101,11 @@ class CPOAgent(OnpolicyAgent):
         self.logger = logger
         self.cost_limit = cost_limit
 
+        if np.isscalar(cost_limit):
+            cost_dim = 1
+        else:
+            raise RuntimeError("CPO does not support multi-cost")
+
         # set seed and computing
         seed_all(seed)
         torch.set_num_threads(thread)
