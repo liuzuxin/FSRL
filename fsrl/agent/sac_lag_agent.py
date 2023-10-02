@@ -109,6 +109,8 @@ class SACLagAgent(OffpolicyAgent):
         self.logger = logger
         self.cost_limit = cost_limit
 
+        
+
         # set seed and computing
         seed_all(seed)
         torch.set_num_threads(thread)
@@ -128,7 +130,7 @@ class SACLagAgent(OffpolicyAgent):
             unbounded=unbounded
         ).to(device)
         actor_optim = torch.optim.Adam(actor.parameters(), lr=actor_lr)
-
+        
         critics = []
         for _ in range(2):
             net1 = Net(
