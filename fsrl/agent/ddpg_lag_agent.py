@@ -3,6 +3,7 @@ from typing import Optional, Tuple
 import gymnasium as gym
 import torch
 import torch.nn as nn
+import numpy as np
 from tianshou.exploration import GaussianNoise
 from tianshou.utils.net.common import Net
 from tianshou.utils.net.continuous import Actor, Critic
