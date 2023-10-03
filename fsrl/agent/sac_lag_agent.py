@@ -109,6 +109,11 @@ class SACLagAgent(OffpolicyAgent):
         self.logger = logger
         self.cost_limit = cost_limit
 
+        if np.isscalar(cost_limit):
+            cost_dim = 1
+        else:
+            cost_dim = len(cost_limit)
+
         # set seed and computing
         seed_all(seed)
         torch.set_num_threads(thread)
@@ -128,9 +133,9 @@ class SACLagAgent(OffpolicyAgent):
             unbounded=unbounded
         ).to(device)
         actor_optim = torch.optim.Adam(actor.parameters(), lr=actor_lr)
-
+        
         critics = []
-        for _ in range(2):
+        for _ in range(1 + cost_dim):
             net1 = Net(
                 state_shape,
                 action_shape,

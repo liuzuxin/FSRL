@@ -85,7 +85,7 @@ class Bullet10MCfg(TrainCfg):
 
 @dataclass
 class MujocoBaseCfg(TrainCfg):
-    task: str = "SafetyPointCircle1-v0"
+    task: str = "SafetyPointCircle1Gymnasium-v0"
     epoch: int = 250
     cost_limit: float = 25
     # collecting params

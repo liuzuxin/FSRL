@@ -3,6 +3,7 @@ from typing import Optional, Tuple
 import gymnasium as gym
 import torch
 import torch.nn as nn
+import numpy as np
 from tianshou.utils.net.common import Net
 from tianshou.utils.net.continuous import ActorProb
 from torch.distributions import Independent, Normal
@@ -117,6 +118,11 @@ class CVPOAgent(OffpolicyAgent):
 
         self.logger = logger
         self.cost_limit = cost_limit
+        
+        if np.isscalar(cost_limit):
+            cost_dim = 1
+        else:
+            cost_dim = len(cost_limit)
 
         # set seed and computing
         seed_all(seed)
@@ -144,7 +150,7 @@ class CVPOAgent(OffpolicyAgent):
 
         critics = []
 
-        for _ in range(2):
+        for _ in range(1+cost_dim):
             if double_critic:
                 net1 = Net(
                     state_shape,
