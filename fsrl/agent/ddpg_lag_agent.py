@@ -1,9 +1,9 @@
 from typing import Optional, Tuple
 
 import gymnasium as gym
+import numpy as np
 import torch
 import torch.nn as nn
-import numpy as np
 from tianshou.exploration import GaussianNoise
 from tianshou.utils.net.common import Net
 from tianshou.utils.net.continuous import Actor, Critic
@@ -112,7 +112,7 @@ class DDPGLagAgent(OffpolicyAgent):
             cost_dim = 1
         else:
             cost_dim = len(cost_limit)
-            
+
         nets = [
             Net(
                 state_shape,

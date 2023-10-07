@@ -116,7 +116,6 @@ class TRPOLagAgent(OnpolicyAgent):
         else:
             cost_dim = len(cost_limit)
 
-
         # set seed and computing
         seed_all(seed)
         torch.set_num_threads(thread)

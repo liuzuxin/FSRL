@@ -133,7 +133,7 @@ class SACLagAgent(OffpolicyAgent):
             unbounded=unbounded
         ).to(device)
         actor_optim = torch.optim.Adam(actor.parameters(), lr=actor_lr)
-        
+
         critics = []
         for _ in range(1 + cost_dim):
             net1 = Net(

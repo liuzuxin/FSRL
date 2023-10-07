@@ -76,7 +76,7 @@ class FastCollector(object):
         else:  # ReplayBuffer or PrioritizedReplayBuffer
             assert buffer.maxsize > 0
             if self.env_num > 1:
-                if type(buffer) == ReplayBuffer:
+                if isinstance(buffer) == ReplayBuffer:
                     buffer_type = "ReplayBuffer"
                     vector_type = "VectorReplayBuffer"
                 else:

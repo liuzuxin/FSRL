@@ -90,7 +90,7 @@ Safety-Gymnasium-Navigation-Tasks
      <option value="SafetyPointGoal1Gymnasium-v0">SafetyPointGoal1Gymnasium-v0</option>
      <option value="SafetyPointGoal2Gymnasium-v0">SafetyPointGoal2Gymnasium-v0</option>
      <option value="SafetyPointPush1Gymnasium-v0">SafetyPointPush1Gymnasium-v0</option>
-     <option value="SafetyPointPush2Gymnasium-v0">SafetyPointPush2Gymnasium-v0</option>     
+     <option value="SafetyPointPush2Gymnasium-v0">SafetyPointPush2Gymnasium-v0</option>
      <!-- Add more options as needed -->
    </select>
 
@@ -111,4 +111,3 @@ Safety-Gymnasium-Navigation-Tasks
    </div>
 
    <script src="../_static/js/benchmark.js"></script>
-
