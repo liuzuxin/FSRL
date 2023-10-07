@@ -10,7 +10,6 @@ class TrainCfg:
     device: str = "cpu"
     thread: int = 4  # if use "cpu" to train
     seed: int = 10
-    use_default_cfg: bool = False
     # CVPO arguments
     estep_iter_num: int = 1
     estep_kl: float = 0.02
@@ -88,7 +87,7 @@ class Bullet10MCfg(TrainCfg):
 
 @dataclass
 class MujocoBaseCfg(TrainCfg):
-    task: str = "SafetyPointCircle1-v0"
+    task: str = "SafetyPointCircle1Gymnasium-v0"
     epoch: int = 250
     cost_limit: float = 25
     unbounded: bool = True

@@ -10,7 +10,6 @@ class TrainCfg:
     device: str = "cpu"
     thread: int = 4  # if use "cpu" to train
     seed: int = 10
-    use_default_cfg: bool = False
     # algorithm params
     lr: float = 1e-3
     hidden_sizes: Tuple[int, ...] = (128, 128)
@@ -82,7 +81,7 @@ class Bullet10MCfg(TrainCfg):
 
 @dataclass
 class MujocoBaseCfg(TrainCfg):
-    task: str = "SafetyPointCircle1-v0"
+    task: str = "SafetyPointCircle1Gymnasium-v0"
     epoch: int = 250
     cost_limit: float = 25
     # collecting params

@@ -168,6 +168,11 @@ class CVPO(BasePolicy):
         self.cost_limit = [cost_limit] * (self.critics_num -
                                           1) if np.isscalar(cost_limit) else cost_limit
 
+        self.qc_thres = [
+            c * (1 - self._gamma**max_episode_steps) / (1 - self._gamma) /
+            max_episode_steps for c in self.cost_limit
+        ]
+
     def pre_update_fn(self, **kwarg: Any) -> Any:
         """Init the mstep optimizer and dual variables."""
         self.mstep_dual_mu = torch.zeros(

@@ -193,7 +193,7 @@ class FastCollector(object):
         self,
         n_episode: int = 1,
         random: bool = False,
-        render: Optional[float] = None,
+        render: bool = False,
         no_grad: bool = True,
         gym_reset_kwargs: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
@@ -206,8 +206,8 @@ class FastCollector(object):
         :param int n_episode: how many episodes you want to collect.
         :param bool random: whether to use random policy for collecting data. Default to
             False.
-        :param float render: the sleep time between rendering consecutive frames. Default
-            to None (no rendering).
+        :param bool render: Whether to render the environment during evaluation, defaults
+            to False
         :param bool no_grad: whether to retain gradient in policy.forward(). Default to
             True (no gradient retaining).
         :param gym_reset_kwargs: extra keyword arguments to pass into the environment's
@@ -328,8 +328,6 @@ class FastCollector(object):
 
             if render:
                 self.env.render()
-                if render > 0 and not np.isclose(render, 0):
-                    time.sleep(render)
 
             # add data into the buffer
             ptr, ep_rew, ep_len, ep_idx = self.buffer.add(

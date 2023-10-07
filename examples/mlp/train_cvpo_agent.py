@@ -1,4 +1,5 @@
 import os
+import types
 from dataclasses import asdict
 
 import bullet_safety_gym
@@ -65,26 +66,19 @@ TASK_TO_CFG = {
 @pyrallis.wrap()
 def train(args: TrainCfg):
 
-    task = args.task
-    default_cfg = TASK_TO_CFG[task]() if task in TASK_TO_CFG else TrainCfg()
-    # use the default configs instead of the input args.
-    if args.use_default_cfg:
-        default_cfg.task = args.task
-        default_cfg.seed = args.seed
-        default_cfg.device = args.device
-        default_cfg.logdir = args.logdir
-        default_cfg.project = args.project
-        default_cfg.group = args.group
-        default_cfg.suffix = args.suffix
-        args = default_cfg
+    # update config
+    cfg, old_cfg = asdict(args), asdict(TrainCfg())
+    differing_values = {key: cfg[key] for key in cfg.keys() if cfg[key] != old_cfg[key]}
+    cfg = asdict(TASK_TO_CFG[args.task]())
+    cfg.update(differing_values)
+    args = types.SimpleNamespace(**cfg)
 
     # setup logger
-    cfg = asdict(args)
-    default_cfg = asdict(default_cfg)
+    default_cfg = asdict(TASK_TO_CFG[args.task]())
     if args.name is None:
         args.name = auto_name(default_cfg, cfg, args.prefix, args.suffix)
     if args.group is None:
-        args.group = args.task + "-cost-" + str(int(args.cost_limit))
+        args.group = args.task + "-cost-" + str(args.cost_limit)
     if args.logdir is not None:
         args.logdir = os.path.join(args.logdir, args.project, args.group)
     logger = WandbLogger(cfg, args.project, args.group, args.name, args.logdir)
