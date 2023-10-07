@@ -11,6 +11,8 @@
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
   [![CodeCov](https://codecov.io/github/liuzuxin/fsrl/branch/main/graph/badge.svg?token=BU27LTW9F3)](https://codecov.io/github/liuzuxin/fsrl)
   [![Tests](https://github.com/liuzuxin/fsrl/actions/workflows/test.yml/badge.svg)](https://github.com/liuzuxin/fsrl/actions/workflows/test.yml)
+  [![GitHub Repo Stars](https://img.shields.io/github/stars/liuzuxin/fsrl?color=brightgreen&logo=github)](https://github.com/liuzuxin/fsrl/stargazers)
+  [![Downloads](https://static.pepy.tech/personalized-badge/fast-safe-rl?period=total&left_color=grey&right_color=blue&left_text=downloads)](https://pepy.tech/project/fast-safe-rl)
   <!-- [![CodeCov](https://img.shields.io/codecov/c/github/liuzuxin/fsrl/main?logo=codecov)](https://app.codecov.io/gh/liuzuxin/fsrl) -->
   <!-- [![tests](https://img.shields.io/github/actions/workflow/status/liuzuxin/fsrl/test.yml?label=tests&logo=github)](https://github.com/liuzuxin/fsrl/tree/HEAD/tests) -->
   <!-- [![PyPI](https://img.shields.io/pypi/v/fsrl?logo=pypi)](https://pypi.org/project/fsrl) -->
@@ -33,9 +35,17 @@
 The Fast Safe Reinforcement Learning (FSRL) package provides modularized implementations
 of Safe RL algorithms based on PyTorch and the [Tianshou](https://tianshou.readthedocs.io/en/master/) framework. Safe RL is a rapidly evolving subfield of RL, focusing on ensuring the safety of learning agents during the training and deployment process. The study of Safe RL is essential because it addresses the critical challenge of preventing unintended or harmful actions while still optimizing an agent's performance in complex environments.
 
-This project offers high-quality and fast implementations of popular Safe RL algorithms, serving as an ideal starting point for those looking to explore and experiment in this field. By providing a comprehensive and accessible toolkit, the FSRL package aims to accelerate research in this crucial area and contribute to the development of safer and more reliable RL-powered systems.
+This project offers high-quality and fast implementations of popular Safe RL algorithms, serving as an ideal starting point for those looking to explore and experiment in this field. By providing a comprehensive and accessible toolkit, the FSRL package aims to accelerate research in this crucial area and contribute to the development of safer and more reliable RL-powered systems. Your feedback and contributions are highly appreciated, as they help us improve the FSRL package.
 
-**Please note that this project is still under active development, and major updates might be expected.** Your feedback and contributions are highly appreciated, as they help us improve the FSRL package.
+If you find this code useful, please cite:
+```bibtex
+@article{liu2023datasets,
+  title={Datasets and Benchmarks for Offline Safe Reinforcement Learning},
+  author={Liu, Zuxin and Guo, Zijian and Lin, Haohong and Yao, Yihang and Zhu, Jiacheng and Cen, Zhepeng and Hu, Hanjiang and Yu, Wenhao and Zhang, Tingnan and Tan, Jie and others},
+  journal={arXiv preprint arXiv:2306.09303},
+  year={2023}
+}
+```
 
 ## 🌟 Key Features
 
