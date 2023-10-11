@@ -1,7 +1,7 @@
 gym
 numba
 numpy>=1.20
-sphinx
+sphinx==6.2.1
 sphinxcontrib-bibtex
 sphinx_rtd_theme>=0.5.1
 tensorboard
