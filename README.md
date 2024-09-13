@@ -37,13 +37,14 @@ of Safe RL algorithms based on PyTorch and the [Tianshou](https://tianshou.readt
 
 This project offers high-quality and fast implementations of popular Safe RL algorithms, serving as an ideal starting point for those looking to explore and experiment in this field. By providing a comprehensive and accessible toolkit, the FSRL package aims to accelerate research in this crucial area and contribute to the development of safer and more reliable RL-powered systems. Your feedback and contributions are highly appreciated, as they help us improve the FSRL package.
 
-If you find this code useful, please cite:
+To learn more, please visit our [project website](http://www.offline-saferl.org). If you find this code useful, please cite our paper, which has been accepted by the [DMLR journal](https://data.mlr.press/volumes/01.html):
 ```bibtex
-@article{liu2023datasets,
+@article{
+  liu2024offlinesaferl,
   title={Datasets and Benchmarks for Offline Safe Reinforcement Learning},
-  author={Liu, Zuxin and Guo, Zijian and Lin, Haohong and Yao, Yihang and Zhu, Jiacheng and Cen, Zhepeng and Hu, Hanjiang and Yu, Wenhao and Zhang, Tingnan and Tan, Jie and others},
-  journal={arXiv preprint arXiv:2306.09303},
-  year={2023}
+  author={Zuxin Liu and Zijian Guo and Haohong Lin and Yihang Yao and Jiacheng Zhu and Zhepeng Cen and Hanjiang Hu and Wenhao Yu and Tingnan Zhang and Jie Tan and Ding Zhao},
+  journal={Journal of Data-centric Machine Learning Research},
+  year={2024}
 }
 ```
 
