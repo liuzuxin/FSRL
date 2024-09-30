@@ -18,7 +18,7 @@ def get_install_requires() -> str:
         "pyrallis==0.3.1",
         "pyyaml~=6.0",
         "tqdm",
-        "numpy>1.16.0",  # https://github.com/numpy/numpy/issues/12793
+        "numpy~=1.17.0",  # https://github.com/numpy/numpy/issues/12793
         "tensorboard>=2.5.0",
         "torch>=1.4.0",
         "numba>=0.51.0",
